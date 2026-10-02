@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          var customFetch = originalFetch;
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              var protoDesc = Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+              if (protoDesc && !protoDesc.set && protoDesc.configurable) {
+                Object.defineProperty(Window.prototype, 'fetch', {
+                  get: function() {
+                    return this._customFetch || originalFetch;
+                  },
+                  set: function(val) {
+                    this._customFetch = val;
+                  },
+                  configurable: true,
+                  enumerable: true
+                });
+              }
+            } catch (e1) {}
+          }
+
+          var winDesc = Object.getOwnPropertyDescriptor(window, 'fetch');
+          if (!winDesc || !winDesc.set) {
+            Object.defineProperty(window, 'fetch', {
+              get: function() {
+                return customFetch || originalFetch;
+              },
+              set: function(val) {
+                customFetch = val;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sustainer Tech - Small Business Operations Automation Agency</title>
+    <meta name="description" content="Sustainer Tech automates small business operations to scale efficiency and profitability. Custom business automation builds for $2,000 and $250/month maintenance and hosting." />
+    <meta property="og:title" content="Sustainer Tech - Small Business Operations Automation Agency" />
+    <meta property="og:description" content="Transform manual bottlenecks into automated growth. End-to-end small business workflow automation, CRM sync, WhatsApp dispatch, and 24/7 cloud maintenance." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white text-slate-900 antialiased selection:bg-teal-500 selection:text-white">
+    <div id="root">
+      <script>
+        if (window.location.protocol === 'file:') {
+          document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+              var rootEl = document.getElementById('root');
+              if (rootEl && rootEl.childElementCount <= 1) {
+                rootEl.innerHTML = [
+                  '<div style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; min-height: 100vh; background: #f8fafc; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box;">',
+                    '<div style="max-width: 640px; width: 100%; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); color: #0f172a;">',
+                      '<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">',
+                        '<div style="width: 38px; height: 38px; background: #e0f2fe; border: 1px solid #bae6fd; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🛡️</div>',
+                        '<div>',
+                          '<h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #0f172a;">Sustainer Tech · Local Setup Guide</h2>',
+                          '<span style="font-size: 12px; color: #0284c7; font-weight: 600;">Modern React Application</span>',
+                        '</div>',
+                      '</div>',
+                      '<p style="color: #475569; font-size: 14px; line-height: 1.6; margin-top: 0;">',
+                        'You opened this file directly from your local folder (<code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px;">file:///</code>). Google Chrome blocks modern web app modules from running over the <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px;">file://</code> protocol for security.',
+                      '</p>',
+                      '<div style="background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 12px; padding: 18px; margin: 20px 0;">',
+                        '<h3 style="margin: 0 0 10px 0; font-size: 14px; font-weight: 700; color: #115e59;">✨ 3 Easy Ways to Run This Website:</h3>',
+                        '<ol style="margin: 0; padding-left: 20px; color: #134e4a; font-size: 13px; line-height: 1.8;">',
+                          '<li><strong>Easiest on Windows:</strong> Double-click the <code style="background: #ccfbf1; padding: 2px 6px; border-radius: 4px; font-weight: 700;">START-WEBSITE-WINDOWS.bat</code> file in this folder.</li>',
+                          '<li><strong>Using Node.js:</strong> Open a command prompt in this folder and run:<br><code style="background: #ccfbf1; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; font-weight: 700;">npm install &amp;&amp; npm run dev</code></li>',
+                          '<li><strong>Instant Preview of Built Site:</strong> Run:<br><code style="background: #ccfbf1; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; font-weight: 700;">npm run preview</code></li>',
+                        '</ol>',
+                      '</div>',
+                      '<p style="font-size: 13px; color: #64748b; margin-bottom: 0;">',
+                        '💡 <em>To publish online:</em> Drag &amp; drop the <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">dist/</code> folder into <a href="https://app.netlify.com/drop" target="_blank" style="color: #0d9488; font-weight: 600; text-decoration: underline;">Netlify Drop</a> or <a href="https://vercel.com" target="_blank" style="color: #0d9488; font-weight: 600; text-decoration: underline;">Vercel</a> for free instant hosting.',
+                      '</p>',
+                    '</div>',
+                  '</div>'
+                ].join('');
+              }
+            }, 300);
+          });
+        }
+      </script>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+{
+  "name": "Sustainer Tech - Small Business Automation Agency",
+  "description": "Sustainer Tech automates small business operations to scale efficiency and profitability. Custom business automation builds for $2,000 and $250/month maintenance and hosting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

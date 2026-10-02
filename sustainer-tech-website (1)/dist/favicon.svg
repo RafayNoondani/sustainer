@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="shieldBg" x1="256" y1="60" x2="256" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EBF7F9"/>
+      <stop offset="100%" stop-color="#DEF3F6"/>
+    </linearGradient>
+    <linearGradient id="tealStroke" x1="90" y1="120" x2="256" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E8A7D"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="cyanStroke" x1="422" y1="120" x2="256" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield Interior Base -->
+  <path d="M256 64L396 112V240C396 332 334 416 256 448C178 416 116 332 116 240V112L256 64Z" fill="url(#shieldBg)" stroke="#C8EDF2" stroke-width="6"/>
+
+  <!-- Left Shield Rim (Emerald Teal) -->
+  <path d="M256 64L116 112V240C116 332 178 416 256 448" stroke="url(#tealStroke)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right Shield Rim (Cyan Azure) -->
+  <path d="M256 64L396 112V240C396 332 334 416 256 448" stroke="url(#cyanStroke)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Center Stylized 'S' -->
+  <path d="M328 190C324 162 298 144 260 144C216 144 186 168 186 204C186 270 334 246 334 316C334 354 300 376 256 376C208 376 182 350 178 318" 
+        stroke="#0F766E" 
+        stroke-width="44" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="none" />
+  <path d="M328 190C324 162 298 144 260 144C216 144 186 168 186 204C186 270 334 246 334 316C334 354 300 376 256 376C208 376 182 350 178 318" 
+        stroke="#0284C7" 
+        stroke-width="40" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        stroke-dasharray="100 220"
+        stroke-dashoffset="60"
+        fill="none" />
+</svg>
